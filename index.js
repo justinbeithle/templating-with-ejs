@@ -21,6 +21,15 @@ app.get('/about', (req, res) => {
   res.render("pages/about", { "title": title });
 });
 
+//users index is our list page
+app.get('/users', function(req, res) {
+  var title = 'Users Page';
+  res.render('users/index', {
+    title: title,
+    users: data
+  });
+});
+
 //Hobbies Page
 app.get('/hobbies', (req, res) => {
   let title = "Hobbies Page";
@@ -33,14 +42,7 @@ app.get('/anime', (req, res) => {
   res.render("pages/anime", { "title": title });
 });
 
-//users index is our list page
-app.get('/users', function(req, res) {
-  var title = 'Users Page';
-  res.render('users/index', {
-    title: title,
-    users: data
-  });
-});
+
 
 app.get('/users/view/:id', function(req, res) {
   var title = 'User Page';
